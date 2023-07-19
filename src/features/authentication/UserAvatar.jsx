@@ -22,22 +22,20 @@ const Avatar = styled.img`
 `;
 
 function UserAvatar() {
-	// const { user } = useUser();
+	const { user } = useUser();
 
-	// const metadata = user.user_metadata
-	// 	? user.user_metadata
-	// 	: { avatar: '', fullName: '' };
+	const metadata = user.user_metadata
+		? user.user_metadata
+		: { avatar: '', fullName: '' };
 
-	// const { avatar, fullName } = metadata;
+	const { avatar, fullName } = metadata;
 
-	// return (
-	// 	<StyledUserAvatar>
-	// 		<Avatar src={avatar || './default-user.jpg'} alt={fullName} />
-	// 		<span>{fullName}</span>
-	// 	</StyledUserAvatar>
-	// );
-
-	return <p>User</p>;
+	return (
+		<StyledUserAvatar>
+			<Avatar src={avatar || './default-user.jpg'} alt={fullName} />
+			<span>{fullName}</span>
+		</StyledUserAvatar>
+	);
 }
 
 export default UserAvatar;
